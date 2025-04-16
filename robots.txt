@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sombrasqueecoam.com.br/sitemap.xml
