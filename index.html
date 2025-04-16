@@ -45,7 +45,7 @@
     <p class="fs-4 mt-5 ghost-stories">Em breve!</p>
   </header>
 
-  <main class="container pt-1 pb-5">
+  <main class="container pt-1 pb-0">
 
     <!-- um filme de -->
     <section class="section-box text-center" data-aos="zoom-in">
@@ -84,116 +84,168 @@
       </div>
     </section>
 
+    <!-- Timeline do projeto -->
+    <section class="bsb-timeline-4" id="timeline-app">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-10 col-md-12 col-xl-10 col-xxl-9">
+
+            <ul class="timeline">
+              <li class="timeline-item" :class="[index % 2 === 0 ? 'left' : 'right']" v-for="(item, index) in updates" :key="index">
+                <div class="timeline-body">
+                  <div data-aos="zoom-in" class="timeline-meta">
+                    <div class="compacta d-inline-flex flex-column" :class="item.isLast ? 'alert-last-update text-md-end' : 'alert-old-update text-md-end'">
+                      <span>{{ item.data }}</span>
+                    </div>
+                  </div>
+                  <div data-aos="zoom-in" class="timeline-content timeline-indicator">
+                    <div class="card shadow" :class="item.isLast ? 'card-last-update' : 'card-old-update'">
+                      <div class="card-body p-xl-4">
+                        <h2 class="card-title ghost-stories mb-2">{{ item.titulo }}</h2>
+                        <p class="compacta text-white card-text m-0">{{ item.texto }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Redes Sociais -->
-    <section class="section-box text-center" data-aos="fade-up">
-      <h2 class="section-title">Siga nas redes</h2>
-      <div class="social-links">
+    <section class="section-box py-5 text-center">
+      <h2 data-aos="zoom-in" class="section-title">Siga nas redes</h2>
+      <div data-aos="zoom-in" class="social-links">
         <a title="Siga no Instagram" aria-label="Instagram" href="https://instagram.com/sombrasqueecoamfilme" class="social-link fs-4">#INSTA</a>
         <a title="Siga no TikTok" aria-label="TikTok" href="https://tiktok.com/@terrorificado" class="social-link fs-4">#TIKTOK</a>
       </div>
     </section>
-  </main>
-
-  <footer class="text-center compacta text-uppercase text-white-50 py-4" style="border-top: 1px solid #333;">
-    <small>&copy; 2025 Sombras que Ecoam. Todos os direitos reservados.</small>
-  </footer>
-  <div class="loading">
-    <div class="loading-text">
-      <span class="loading-text-words">C</span>
-      <span class="loading-text-words">A</span>
-      <span class="loading-text-words">R</span>
-      <span class="loading-text-words">R</span>
-      <span class="loading-text-words">E</span>
-      <span class="loading-text-words">G</span>
-      <span class="loading-text-words">A</span>
-      <span class="loading-text-words">N</span>
-      <span class="loading-text-words">D</span>
-      <span class="loading-text-words">O</span>
+    </main>
+    <div class="loading">
+      <div class="loading-text">
+        <span class="loading-text-words">C</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">R</span>
+        <span class="loading-text-words">R</span>
+        <span class="loading-text-words">E</span>
+        <span class="loading-text-words">G</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">D</span>
+        <span class="loading-text-words">O</span>
+      </div>
     </div>
-  </div>
-  <script>
-    window.onload = function () {
-      setTimeout(function () {
-        const loadingElement = document.querySelector('.loading');
-        if (loadingElement) {
-          loadingElement.style.transition = "opacity 0.5s ease";
-          loadingElement.style.opacity = 0;
-          setTimeout(() => loadingElement.style.display = "none", 200);
+    <script>
+      window.onload = function () {
+        setTimeout(function () {
+          const loadingElement = document.querySelector('.loading');
+          if (loadingElement) {
+            loadingElement.style.transition = "opacity 0.5s ease";
+            loadingElement.style.opacity = 0;
+            setTimeout(() => loadingElement.style.display = "none", 200);
+          }
+        }, 200);
+      };
+      const { createApp } = Vue;
+      createApp({
+  data() {
+    return {
+      updates: [
+        {
+          data: 'Em breve',
+          titulo: 'Visita coletiva',
+          texto: 'Vamos explorar os cenários do filme com todo o elenco! A ideia é fazer a leitura do roteiro em grupo e ajustar o que for preciso juntos, direto nos locais de gravação.',
+          isLast: true
+        },
+        {
+          data: '07/04/2025',
+          titulo: 'Nova versão do roteiro',
+          texto: 'Revisamos o roteiro para deixar os diálogos mais naturais, acrescentamos personagens e aprofundamos os que já existiam. Tudo ficou mais vivo!',
+          isLast: false
+        },
+        {
+          data: '26/10/2024',
+          titulo: 'Roteiro inicial',
+          texto: 'Finalizamos a primeira versão do roteiro e definimos a base dos personagens. O ponto de partida está pronto!',
+          isLast: false
         }
-      }, 1000);
-    };
-    const { createApp } = Vue;
-
-    createApp({
-      data() {
-        return {
-          elenco: [
-            { nome: 'Thiago Castro', imagem: './assets/img/cast/thiago.webp', papel: 'Chris', insta: "thiagocastrou" },
-            { nome: 'Eduardo Andrade', imagem: './assets/img/cast/eduardo.webp', papel: 'Miguel', insta: "eduandradex" },
-            { nome: 'Ana Lígia', imagem: './assets/img/cast/analigia.webp', papel: 'Tara', insta: "nalijaa" },
-            { nome: 'Marília Galerani', imagem: './assets/img/cast/marilia.webp', papel: 'Layla', insta: "mariliagalerani" },
-            { nome: 'Jhenice Gallina', imagem: './assets/img/cast/jhenice.webp', papel: 'Jess', insta: "jhenice_gallina" },
-            { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
-          ]
-        }
-      }
-    }).mount('#app');
-
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 300, density: { enable: true, value_area: 800 } },
-        color: { value: "#ff0000" },
-        shape: { type: "circle" },
-        opacity: { value: 0.5, random: true },
-        size: { value: 2, random: true },
-        line_linked: { enable: false },
-        move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: { enable: false },
-          onclick: { enable: true }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: false
-    });
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Movie",
-      "name": "Sombras que Ecoam",
-      "genre": "Horror",
-      "director": {
-        "@type": "Person",
-        "name": "Thiago Castro"
-      },
-      "productionCompany": {
-        "@type": "Organization",
-        "name": "Evil Lodge Productions"
-      },
-      "actor": [
-        { "@type": "Person", "name": "Thiago Castro" },
-        { "@type": "Person", "name": "Eduardo Andrade" },
-        { "@type": "Person", "name": "Ana Lígia" },
-        { "@type": "Person", "name": "Marília Galerani" },
-        { "@type": "Person", "name": "Jhenice Gallina" },
-        { "@type": "Person", "name": "Vinícius Costa" }
-      ],
-      "description": "Duas décadas após o fechamento de um antigo instituto de menores, um grupo de cinegrafistas amadores decide gravar um documentário chamado Sombras que Ecoam, investigando os abusos sofridos pelos ex-internos, que viviam na sombra da sociedade. Mas, conforme avançam nas gravações, começam a entender que podem ter desencadeado algo do passado. As câmeras continuam gravando... até o fim.",
-      "image": "https://sombrasqueecoam.com.br/cover.webp",
-      "url": "https://sombrasqueecoam.com.br"
+      ]
     }
-  </script>
+  }
+}).mount('#timeline-app');
+      createApp({
+        data() {
+          return {
+            elenco: [
+              { nome: 'Thiago Castro', imagem: './assets/img/cast/thiago.webp', papel: 'Chris', insta: "thiagocastrou" },
+              { nome: 'Eduardo Andrade', imagem: './assets/img/cast/eduardo.webp', papel: 'Miguel', insta: "eduandradex" },
+              { nome: 'Ana Lígia', imagem: './assets/img/cast/analigia.webp', papel: 'Tara', insta: "nalijaa" },
+              { nome: 'Marília Galerani', imagem: './assets/img/cast/marilia.webp', papel: 'Layla', insta: "mariliagalerani" },
+              { nome: 'Jhenice Gallina', imagem: './assets/img/cast/jhenice.webp', papel: 'Jess', insta: "jhenice_gallina" },
+              { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
+            ]
+          }
+        }
+      }).mount('#app');
 
-</body>
-</html>
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 300, density: { enable: true, value_area: 800 } },
+          color: { value: "#ff0000" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5, random: true },
+          size: { value: 2, random: true },
+          line_linked: { enable: false },
+          move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: false },
+            onclick: { enable: true }
+          }
+        },
+        retina_detect: true
+      });
+    </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: false
+      });
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Movie",
+        "name": "Sombras que Ecoam",
+        "genre": "Horror",
+        "director": {
+          "@type": "Person",
+          "name": "Thiago Castro"
+        },
+        "productionCompany": {
+          "@type": "Organization",
+          "name": "Evil Lodge Productions"
+        },
+        "actor": [
+          { "@type": "Person", "name": "Thiago Castro" },
+          { "@type": "Person", "name": "Eduardo Andrade" },
+          { "@type": "Person", "name": "Ana Lígia" },
+          { "@type": "Person", "name": "Marília Galerani" },
+          { "@type": "Person", "name": "Jhenice Gallina" },
+          { "@type": "Person", "name": "Vinícius Costa" }
+        ],
+        "description": "Duas décadas após o fechamento de um antigo instituto de menores, um grupo de cinegrafistas amadores decide gravar um documentário chamado Sombras que Ecoam, investigando os abusos sofridos pelos ex-internos, que viviam na sombra da sociedade. Mas, conforme avançam nas gravações, começam a entender que podem ter desencadeado algo do passado. As câmeras continuam gravando... até o fim.",
+        "image": "https://sombrasqueecoam.com.br/cover.webp",
+        "url": "https://sombrasqueecoam.com.br"
+      }
+    </script>
+
+  </body>
+  </html>
