@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+@font-face {
+  font-family: Ghost;
+  src: url("../fonts/ghost_stories.otf") format("opentype");
+}
+@font-face {
+  font-family: "Compacta";
+  src: url("../fonts/unicode.compacta.otf") format("opentype");
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 9999;
+}
+
+.loading-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+.loading-text span {
+  display: inline-block;
+  margin: 0 5px;
+  color: #FF0000;
+  font-family: "Compacta", sans-serif;
+}
+.loading-text span:nth-child(1) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0s infinite linear alternate;
+}
+.loading-text span:nth-child(2) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.2s infinite linear alternate;
+}
+.loading-text span:nth-child(3) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.4s infinite linear alternate;
+}
+.loading-text span:nth-child(4) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.6s infinite linear alternate;
+}
+.loading-text span:nth-child(5) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 0.8s infinite linear alternate;
+}
+.loading-text span:nth-child(6) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1s infinite linear alternate;
+}
+.loading-text span:nth-child(7) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1.2s infinite linear alternate;
+}
+.loading-text span:nth-child(8) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1.4s infinite linear alternate;
+}
+.loading-text span:nth-child(9) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1.6s infinite linear alternate;
+}
+.loading-text span:nth-child(10) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 1.8s infinite linear alternate;
+}
+.loading-text span:nth-child(11) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 2s infinite linear alternate;
+}
+.loading-text span:nth-child(12) {
+  filter: blur(0px);
+  animation: blur-text 1.5s 2.2s infinite linear alternate;
+}
+
+@keyframes blur-text {
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(5px);
+  }
+}
+.compacta {
+  font-family: "Compacta", sans-serif;
+}
+
+.ghost-stories {
+  font-family: Ghost;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.main-header {
+  background-image: url("../img/header.webp");
+  background-size: cover;
+  background-position: bottom;
+  position: relative;
+  padding: 12rem 1rem;
+  text-align: center;
+  color: white;
+}
+
+.main-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 1;
+}
+
+.main-header h1, .main-header p {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  font-family: Ghost;
+  margin-bottom: 1.5rem;
+  color: #ff0000;
+  font-size: 4rem;
+}
+
+.section-box {
+  padding: 2rem;
+  font-size: 1.1em;
+  font-family: "Compacta", sans-serif;
+}
+
+.cast-card {
+  padding: 0.2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.cast-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.cast-papel {
+  color: #ff0000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-link {
+  text-decoration: none !important;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.02);
+  color: #ff0000;
+}
+
+.ator-imagem {
+  filter: grayscale(100%);
+}
+
+.text-red {
+  color: #ff0000;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cast-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.cast-card:hover {
+  transform: scale(1.05);
+}
+
+.cast-card:hover img {
+  filter: grayscale(0%);
+}
+
+/* Scrollbar estilizada vermelha sobre fundo preto */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0); /* Transparente para efeito overlay */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff0000;
+  border-radius: 6px;
+  border: 2px solid #000; /* Cria uma separação visual para efeito "overlay" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cc0000;
+}
+
+html, body {
+  overflow-y: overlay;
+}
