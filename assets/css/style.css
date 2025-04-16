@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 @font-face {
   font-family: Ghost;
@@ -115,17 +116,6 @@ body {
   color: white;
 }
 
-.main-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0);
-  z-index: 1;
-}
-
 .main-header h1, .main-header p {
   position: relative;
   z-index: 2;
@@ -165,6 +155,7 @@ body {
   height: 100%;
   z-index: 1;
   top: 0;
+  pointer-events: none;
   left: 0;
 }
 
@@ -258,199 +249,221 @@ html, body {
 }
 
 .py-8 {
-    padding-bottom: 4.5rem !important;
-    padding-top: 4.5rem !important
+  padding-bottom: 4.5rem !important;
+  padding-top: 4.5rem !important
 }
 
 @media(min-width:576px) {
-    .py-sm-8 {
-        padding-bottom: 4.5rem !important;
-        padding-top: 4.5rem !important
-    }
+  .py-sm-8 {
+    padding-bottom: 4.5rem !important;
+    padding-top: 4.5rem !important
+  }
 }
 
 @media(min-width:768px) {
-    .py-md-8 {
-        padding-bottom: 4.5rem !important;
-        padding-top: 4.5rem !important
-    }
+  .py-md-8 {
+    padding-bottom: 4.5rem !important;
+    padding-top: 4.5rem !important
+  }
 }
 
 @media(min-width:992px) {
-    .py-lg-8 {
-        padding-bottom: 4.5rem !important;
-        padding-top: 4.5rem !important
-    }
+  .py-lg-8 {
+    padding-bottom: 4.5rem !important;
+    padding-top: 4.5rem !important
+  }
 }
 
 @media(min-width:1200px) {
-    .py-xl-8 {
-        padding-bottom: 4.5rem !important;
-        padding-top: 4.5rem !important
-    }
+  .py-xl-8 {
+    padding-bottom: 4.5rem !important;
+    padding-top: 4.5rem !important
+  }
 }
 
 @media(min-width:1400px) {
-    .py-xxl-8 {
-        padding-bottom: 4.5rem !important;
-        padding-top: 4.5rem !important
-    }
+  .py-xxl-8 {
+    padding-bottom: 4.5rem !important;
+    padding-top: 4.5rem !important
+  }
 }
 
 .bsb-timeline-4 {
-    --bsb-tl-color: var(--bs-primary-bg-subtle);
-    --bsb-tl-circle-color: var(--bs-light);
-    --bsb-tl-circle-border-color: var(--bs-primary);
-    --bsb-tl-circle-size: 10px;
-    --bsb-tl-circle-border-size: 2px;
-    --bsb-tl-circle-offset: 5px;
-    --bsb-tl-indicator-color: #ff0000
+  --bsb-tl-color: var(--bs-primary-bg-subtle);
+  --bsb-tl-circle-color: var(--bs-light);
+  --bsb-tl-circle-border-color: var(--bs-primary);
+  --bsb-tl-circle-size: 10px;
+  --bsb-tl-circle-border-size: 2px;
+  --bsb-tl-circle-offset: 5px;
+  --bsb-tl-indicator-color: #ff0000
 }
 
 .bsb-timeline-4 .timeline {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative
 }
 
 .bsb-timeline-4 .timeline:after {
-    background: linear-gradient(to top, transparent, #ff0000, transparent);
-    bottom: 0;
-    content: "";
-    left: 0;
-    margin-left: -1px;
-    position: absolute;
-    top: 0;
-    width: 2px;
+  background: linear-gradient(to top, transparent, #ff0000, transparent);
+  bottom: 0;
+  content: "";
+  left: 0;
+  margin-left: -1px;
+  position: absolute;
+  top: 0;
+  width: 2px;
 }
 
 @media(min-width:768px) {
-    .bsb-timeline-4 .timeline:after {
-        left: 50%
-    }
+  .bsb-timeline-4 .timeline:after {
+    left: 50%
+  }
 }
 
 .bsb-timeline-4 .timeline>.timeline-item {
-    margin: 0;
-    padding: 0;
-    position: relative
+  margin: 0;
+  padding: 0;
+  position: relative
 }
 
 .bsb-timeline-4 .timeline>.timeline-item:after {
-    background: #ff0000;
-    border-radius: .2rem;
-    content: "";
-    height: var(--bsb-tl-circle-size);
-    left: calc(var(--bsb-tl-circle-offset) * -1);
-    position: absolute;
-    top: calc(50% - var(--bsb-tl-circle-offset));
-    width: var(--bsb-tl-circle-size);
-    z-index: 1;
+  background: #ff0000;
+  border-radius: .2rem;
+  content: "";
+  height: var(--bsb-tl-circle-size);
+  left: calc(var(--bsb-tl-circle-offset) * -1);
+  position: absolute;
+  top: calc(50% - var(--bsb-tl-circle-offset));
+  width: var(--bsb-tl-circle-size);
+  z-index: 1;
 }
 
 .bsb-timeline-4 .timeline>.timeline-item .timeline-body {
-    margin: 0;
-    padding: 0;
-    position: relative
+  margin: 0;
+  padding: 0;
+  position: relative
 }
 
 .bsb-timeline-4 .timeline>.timeline-item .timeline-meta {
-    padding: 2.5rem 0 1rem 2.5rem
+  padding: 2.5rem 0 1rem 2.5rem
 }
 
 .bsb-timeline-4 .timeline>.timeline-item .timeline-content {
-    padding: 0 0 2.5rem 2.5rem;
-    position: relative
+  padding: 0 0 2.5rem 2.5rem;
+  position: relative
 }
 
 @media(min-width:768px) {
-    .bsb-timeline-4 .timeline>.timeline-item {
-        width: 50%
-    }
-    .bsb-timeline-4 .timeline>.timeline-item .timeline-meta {
-        margin-bottom: 0;
-        position: absolute;
-        top: calc(50% - 17px);
-        width: 100%;
-        z-index: 1
-    }
-    .bsb-timeline-4 .timeline>.timeline-item .timeline-content {
-        padding: 2.5rem
-    }
-    .bsb-timeline-4 .timeline>.timeline-item .timeline-indicator {
-        position: relative
-    }
-    .bsb-timeline-4 .timeline>.timeline-item .timeline-indicator:after {
-        border-width: 1px;
-        border: 10px solid var(--bsb-tl-indicator-color);
-        border-color: transparent var(--bsb-tl-indicator-color) transparent transparent;
-        border-left-width: 0;
-        content: "";
-        left: calc(2.5rem - 10px);
-        position: absolute;
-        top: calc(50% - var(--bsb-tl-circle-offset));
-        z-index: 2
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.left {
-        left: 0
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.left:after {
-        left: auto;
-        right: calc(var(--bsb-tl-circle-offset)*-1)
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.left .timeline-meta {
-        padding: 0 0 0 2.5rem;
-        right: -100%
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.left .timeline-indicator:after {
-        border-width: 1px;
-        border: 10px solid var(--bsb-tl-indicator-color);
-        border-color: transparent transparent transparent var(--bsb-tl-indicator-color);
-        border-right-width: 0;
-        left: auto;
-        right: calc(2.5rem - 10px)
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.right {
-        left: 50%
-    }
-    .bsb-timeline-4 .timeline>.timeline-item.right .timeline-meta {
-        display: flex;
-        justify-content: flex-end;
-        left: -100%;
-        padding: 0 2.5rem 0 0
-    }
+  .bsb-timeline-4 .timeline>.timeline-item {
+    width: 50%
+  }
+  .bsb-timeline-4 .timeline>.timeline-item .timeline-meta {
+    margin-bottom: 0;
+    position: absolute;
+    top: calc(50% - 17px);
+    width: 100%;
+    z-index: 1
+  }
+  .bsb-timeline-4 .timeline>.timeline-item .timeline-content {
+    padding: 2.5rem
+  }
+  .bsb-timeline-4 .timeline>.timeline-item .timeline-indicator {
+    position: relative
+  }
+  .bsb-timeline-4 .timeline>.timeline-item .timeline-indicator:after {
+    border-width: 1px;
+    border: 10px solid var(--bsb-tl-indicator-color);
+    border-color: transparent var(--bsb-tl-indicator-color) transparent transparent;
+    border-left-width: 0;
+    content: "";
+    left: calc(2.5rem - 10px);
+    position: absolute;
+    top: calc(50% - var(--bsb-tl-circle-offset));
+    z-index: 2
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.left {
+    left: 0
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.left:after {
+    left: auto;
+    right: calc(var(--bsb-tl-circle-offset)*-1)
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.left .timeline-meta {
+    padding: 0 0 0 2.5rem;
+    right: -100%
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.left .timeline-indicator:after {
+    border-width: 1px;
+    border: 10px solid var(--bsb-tl-indicator-color);
+    border-color: transparent transparent transparent var(--bsb-tl-indicator-color);
+    border-right-width: 0;
+    left: auto;
+    right: calc(2.5rem - 10px)
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.right {
+    left: 50%
+  }
+  .bsb-timeline-4 .timeline>.timeline-item.right .timeline-meta {
+    display: flex;
+    justify-content: flex-end;
+    left: -100%;
+    padding: 0 2.5rem 0 0
+  }
 }
 
 .alert-old-update {
-    background-color: rgb(255 0 0 / 3%);
-    border: 1px solid rgb(255 0 0 / 9%);
-    text-transform: uppercase;
-    color: rgba(255, 0, 0, 0.8);
-    padding: 4px 14px;
-    border-radius: 0.35rem;
+  background-color: rgb(255 0 0 / 3%);
+  border: 1px solid rgb(255 0 0 / 9%);
+  text-transform: uppercase;
+  color: rgba(255, 0, 0, 0.8);
+  padding: 4px 14px;
+  border-radius: 0.35rem;
 }
 
 .alert-last-update {
-    background-color: rgb(255 0 0 / 100%);
-    border: 1px solid rgb(255 0 0 / 100%);
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 1);
-    padding: 4px 14px;
-    border-radius: 0.35rem;
+  background-color: rgb(255 0 0 / 100%);
+  border: 1px solid rgb(255 0 0 / 100%);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  padding: 4px 14px;
+  border-radius: 0.35rem;
 }
 .card-old-update {
-    background-color: rgb(255 0 0 / 3%);
-    border: 1px solid rgb(255 0 0 / 9%);
-    color: rgba(255, 0, 0, 0.8);
-    padding: 4px 14px;
-    border-radius: 0.35rem;
+  background-color: rgb(255 0 0 / 3%);
+  border: 1px solid rgb(255 0 0 / 9%);
+  color: rgba(255, 0, 0, 0.8);
+  padding: 4px 14px;
+  border-radius: 0.35rem;
 }
 
 .card-last-update {
-    background-color: rgb(255 0 0 / 100%);
-    border: 1px solid rgb(255 0 0 / 100%);
-    color: rgba(255, 255, 255, 1);
-    padding: 4px 14px;
-    border-radius: 0.35rem;
+  background-color: rgb(255 0 0 / 100%);
+  border: 1px solid rgb(255 0 0 / 100%);
+  color: rgba(255, 255, 255, 1);
+  padding: 4px 14px;
+  border-radius: 0.35rem;
+}
+
+.btn {
+  cursor: pointer!important;
+}
+
+.btn-danger {
+  background-color: rgb(255 0 0 / 100%);
+  border: 1px solid rgb(255 0 0 / 100%);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+  padding: 8px 16px; /* Ajuste o padding conforme necessário */
+  font-family: 'Compacta';
+  border-radius: 0.35rem;
+  display: inline-flex; /* Isso impede o botão de ocupar toda a linha */
+  align-items: center; /* Centraliza o ícone e o texto verticalmente */
+  justify-content: center; /* Garante que o conteúdo fique centralizado na horizontal */
+  text-decoration: none; /* Remove qualquer sublinhado do link */
+}
+
+.btn-danger i {
+  margin-right: 4px; /* Ajuste o espaço entre o ícone e o texto */
 }

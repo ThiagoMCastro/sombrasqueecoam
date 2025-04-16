@@ -41,8 +41,12 @@
   <!-- Header -->
   <header class="main-header" data-aos="fade-in">
     <div id="particles-js"></div>
+    <div style="font-size: 0.7em" class="mb-3 compacta d-inline-flex flex-column alert-old-update">
+      <span>FILME DE TERROR INDEPENDENTE</span>
+    </div>
     <h1 class="display-3 fw-bold"><img alt="Logo do filme Sombras que Ecoam" loading="lazy" src="assets/img/logo.webp" width="350px"></h1>
-    <p class="fs-4 mt-5 ghost-stories">Em breve!</p>
+    <p class="fs-4 mt-3 ghost-stories">Em breve!</p>
+    <a class="btn btn-danger" href="https://instagram.com/sombrasqueecoamfilme" target="_blank" alt="Instagram do filme"><i class="bi-instagram"></i> SIGA O PROJETO</a>
   </header>
 
   <main class="container pt-1 pb-0">
@@ -77,7 +81,7 @@
             <a :title="`Instagram de ${ator.nome}`" :href="'https://instagram.com/' + ator.insta" target="_blank">
               <img loading="lazy" class="ator-imagem" :src="ator.imagem" :alt="`Imagem do elenco: ${ator.nome} interpreta ${ator.papel}`">
               <h6 style="font-size: 0.7em" class="px-0 m-0 mt-1 ghost-stories">{{ ator.nome }}</h6>
-              <p class="cast-papel">{{ ator.papel }}</p>
+              <p class="cast-papel">#{{ ator.papel }}</p>
             </a>
           </div>
         </div>
@@ -123,129 +127,129 @@
         <a title="Siga no TikTok" aria-label="TikTok" href="https://tiktok.com/@terrorificado" class="social-link fs-4">#TIKTOK</a>
       </div>
     </section>
-    </main>
-    <div class="loading">
-      <div class="loading-text">
-        <span class="loading-text-words">C</span>
-        <span class="loading-text-words">A</span>
-        <span class="loading-text-words">R</span>
-        <span class="loading-text-words">R</span>
-        <span class="loading-text-words">E</span>
-        <span class="loading-text-words">G</span>
-        <span class="loading-text-words">A</span>
-        <span class="loading-text-words">N</span>
-        <span class="loading-text-words">D</span>
-        <span class="loading-text-words">O</span>
-      </div>
+  </main>
+  <div class="loading">
+    <div class="loading-text">
+      <span class="loading-text-words">C</span>
+      <span class="loading-text-words">A</span>
+      <span class="loading-text-words">R</span>
+      <span class="loading-text-words">R</span>
+      <span class="loading-text-words">E</span>
+      <span class="loading-text-words">G</span>
+      <span class="loading-text-words">A</span>
+      <span class="loading-text-words">N</span>
+      <span class="loading-text-words">D</span>
+      <span class="loading-text-words">O</span>
     </div>
-    <script>
-      window.onload = function () {
-        setTimeout(function () {
-          const loadingElement = document.querySelector('.loading');
-          if (loadingElement) {
-            loadingElement.style.transition = "opacity 0.5s ease";
-            loadingElement.style.opacity = 0;
-            setTimeout(() => loadingElement.style.display = "none", 200);
-          }
-        }, 200);
-      };
-      const { createApp } = Vue;
-      createApp({
-  data() {
-    return {
-      updates: [
-        {
-          data: 'Em breve',
-          titulo: 'Visita coletiva',
-          texto: 'Vamos explorar os cenários do filme com todo o elenco! A ideia é fazer a leitura do roteiro em grupo e ajustar o que for preciso juntos, direto nos locais de gravação.',
-          isLast: true
-        },
-        {
-          data: '07/04/2025',
-          titulo: 'Nova versão do roteiro',
-          texto: 'Revisamos o roteiro para deixar os diálogos mais naturais, acrescentamos personagens e aprofundamos os que já existiam. Tudo ficou mais vivo!',
-          isLast: false
-        },
-        {
-          data: '26/10/2024',
-          titulo: 'Roteiro inicial',
-          texto: 'Finalizamos a primeira versão do roteiro e definimos a base dos personagens. O ponto de partida está pronto!',
-          isLast: false
+  </div>
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        const loadingElement = document.querySelector('.loading');
+        if (loadingElement) {
+          loadingElement.style.transition = "opacity 0.5s ease";
+          loadingElement.style.opacity = 0;
+          setTimeout(() => loadingElement.style.display = "none", 200);
         }
-      ]
-    }
-  }
-}).mount('#timeline-app');
-      createApp({
-        data() {
-          return {
-            elenco: [
-              { nome: 'Thiago Castro', imagem: './assets/img/cast/thiago.webp', papel: 'Chris', insta: "thiagocastrou" },
-              { nome: 'Eduardo Andrade', imagem: './assets/img/cast/eduardo.webp', papel: 'Miguel', insta: "eduandradex" },
-              { nome: 'Ana Lígia', imagem: './assets/img/cast/analigia.webp', papel: 'Tara', insta: "nalijaa" },
-              { nome: 'Marília Galerani', imagem: './assets/img/cast/marilia.webp', papel: 'Layla', insta: "mariliagalerani" },
-              { nome: 'Jhenice Gallina', imagem: './assets/img/cast/jhenice.webp', papel: 'Jess', insta: "jhenice_gallina" },
-              { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
-            ]
-          }
+      }, 200);
+    };
+    const { createApp } = Vue;
+    createApp({
+      data() {
+        return {
+          updates: [
+            {
+              data: 'Em breve',
+              titulo: 'Visita coletiva',
+              texto: 'Vamos explorar os cenários do filme com todo o elenco! A ideia é fazer a leitura do roteiro em grupo e ajustar o que for preciso juntos, direto nos locais de gravação.',
+              isLast: true
+            },
+            {
+              data: '07/04/2025',
+              titulo: 'Nova versão do roteiro',
+              texto: 'Revisamos o roteiro para deixar os diálogos mais naturais, acrescentamos personagens e aprofundamos os que já existiam. Tudo ficou mais vivo!',
+              isLast: false
+            },
+            {
+              data: '26/10/2024',
+              titulo: 'Roteiro inicial',
+              texto: 'Finalizamos a primeira versão do roteiro e definimos a base dos personagens. O ponto de partida está pronto!',
+              isLast: false
+            }
+          ]
         }
-      }).mount('#app');
-
-      particlesJS("particles-js", {
-        particles: {
-          number: { value: 300, density: { enable: true, value_area: 800 } },
-          color: { value: "#ff0000" },
-          shape: { type: "circle" },
-          opacity: { value: 0.5, random: true },
-          size: { value: 2, random: true },
-          line_linked: { enable: false },
-          move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: { enable: false },
-            onclick: { enable: true }
-          }
-        },
-        retina_detect: true
-      });
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1000,
-        once: false
-      });
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Movie",
-        "name": "Sombras que Ecoam",
-        "genre": "Horror",
-        "director": {
-          "@type": "Person",
-          "name": "Thiago Castro"
-        },
-        "productionCompany": {
-          "@type": "Organization",
-          "name": "Evil Lodge Productions"
-        },
-        "actor": [
-          { "@type": "Person", "name": "Thiago Castro" },
-          { "@type": "Person", "name": "Eduardo Andrade" },
-          { "@type": "Person", "name": "Ana Lígia" },
-          { "@type": "Person", "name": "Marília Galerani" },
-          { "@type": "Person", "name": "Jhenice Gallina" },
-          { "@type": "Person", "name": "Vinícius Costa" }
-        ],
-        "description": "Duas décadas após o fechamento de um antigo instituto de menores, um grupo de cinegrafistas amadores decide gravar um documentário chamado Sombras que Ecoam, investigando os abusos sofridos pelos ex-internos, que viviam na sombra da sociedade. Mas, conforme avançam nas gravações, começam a entender que podem ter desencadeado algo do passado. As câmeras continuam gravando... até o fim.",
-        "image": "https://sombrasqueecoam.com.br/cover.webp",
-        "url": "https://sombrasqueecoam.com.br"
       }
-    </script>
+    }).mount('#timeline-app');
+    createApp({
+      data() {
+        return {
+          elenco: [
+            { nome: 'Thiago Castro', imagem: './assets/img/cast/thiago.webp', papel: 'Chris', insta: "thiagocastrou" },
+            { nome: 'Eduardo Andrade', imagem: './assets/img/cast/eduardo.webp', papel: 'Miguel', insta: "eduandradex" },
+            { nome: 'Ana L. Santos', imagem: './assets/img/cast/analigia.webp', papel: 'Tara', insta: "nalijaa" },
+            { nome: 'Marília Galerani', imagem: './assets/img/cast/marilia.webp', papel: 'Layla', insta: "mariliagalerani" },
+            { nome: 'Jhenice Gallina', imagem: './assets/img/cast/jhenice.webp', papel: 'Jess', insta: "jhenice_gallina" },
+            { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
+          ]
+        }
+      }
+    }).mount('#app');
 
-  </body>
-  </html>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 300, density: { enable: true, value_area: 800 } },
+        color: { value: "#ff0000" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 2, random: true },
+        line_linked: { enable: false },
+        move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: false },
+          onclick: { enable: true }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Movie",
+      "name": "Sombras que Ecoam",
+      "genre": "Horror",
+      "director": {
+        "@type": "Person",
+        "name": "Thiago Castro"
+      },
+      "productionCompany": {
+        "@type": "Organization",
+        "name": "Evil Lodge Productions"
+      },
+      "actor": [
+        { "@type": "Person", "name": "Thiago Castro" },
+        { "@type": "Person", "name": "Eduardo Andrade" },
+        { "@type": "Person", "name": "Ana Lígia" },
+        { "@type": "Person", "name": "Marília Galerani" },
+        { "@type": "Person", "name": "Jhenice Gallina" },
+        { "@type": "Person", "name": "Vinícius Costa" }
+      ],
+      "description": "Duas décadas após o fechamento de um antigo instituto de menores, um grupo de cinegrafistas amadores decide gravar um documentário chamado Sombras que Ecoam, investigando os abusos sofridos pelos ex-internos, que viviam na sombra da sociedade. Mas, conforme avançam nas gravações, começam a entender que podem ter desencadeado algo do passado. As câmeras continuam gravando... até o fim.",
+      "image": "https://sombrasqueecoam.com.br/cover.webp",
+      "url": "https://sombrasqueecoam.com.br"
+    }
+  </script>
+
+</body>
+</html>
