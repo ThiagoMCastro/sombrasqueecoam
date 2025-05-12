@@ -80,6 +80,7 @@
     <h1 class="display-3 fw-bold"><img alt="Logo do filme Sombras que Ecoam" loading="lazy" src="assets/img/logo.webp" width="350px"></h1>
     <p class="fs-4 mt-3 ghost-stories">Em breve!</p>
     <a class="btn btn-danger" href="https://instagram.com/sombrasqueecoamfilme" target="_blank" alt="Instagram do filme"><i class="bi-instagram"></i> SIGA O PROJETO</a>
+    <a class="btn btn-danger" href="https://letterboxd.com/film/sombras-que-ecoam/" target="_blank" alt="Letterboxd do filme"><i class="bi-heart"></i> Letterboxd</a>
   </header>
 
   <main class="container pt-1 pb-0">
@@ -112,7 +113,7 @@
         <div class="col-6 col-sm-4 col-md-3 col-lg-2" v-for="ator in elenco" :key="ator.nome">
           <div class="cast-card">
             <a :title="`Instagram de ${ator.nome}`" :href="'https://instagram.com/' + ator.insta" target="_blank">
-              <img loading="lazy" class="ator-imagem" :src="ator.imagem" :alt="`Imagem do elenco: ${ator.nome} interpreta ${ator.papel}`">
+              <img loading="lazy" style="aspect-ratio: 1/1;" class="ator-imagem" :src="ator.imagem" :alt="`Imagem do elenco: ${ator.nome} interpreta ${ator.papel}`">
               <h6 style="font-size: 0.7em" class="px-0 m-0 mt-1 ghost-stories">{{ ator.nome }}</h6>
               <p class="cast-papel">#{{ ator.papel }}</p>
             </a>
@@ -158,6 +159,9 @@
       <div data-aos="zoom-in" class="social-links">
         <a title="Siga no Instagram" aria-label="Instagram" href="https://instagram.com/sombrasqueecoamfilme" class="social-link fs-4">#INSTA</a>
         <a title="Siga no TikTok" aria-label="TikTok" href="https://tiktok.com/@terrorificado" class="social-link fs-4">#TIKTOK</a>
+        <a title="Page no IMDB" aria-label="TikTok" href="https://www.imdb.com/title/tt36748457/" class="social-link fs-4">#IMDB</a>
+        <a title="Page no TMDB" aria-label="TMDB" href="https://www.themoviedb.org/movie/1467848-sombras-que-ecoam" class="social-link fs-4">#TMDB</a>
+        <a title="Siga no Letterboxd" aria-label="Letterboxd" href="https://letterboxd.com/film/sombras-que-ecoam/" class="social-link fs-4">#Letterboxd</a>
       </div>
     </section>
   </main>
@@ -192,10 +196,16 @@
         return {
           updates: [
             {
-              data: 'Em breve',
+              data: '17/06/2025',
+              titulo: 'Início das gravações',
+              texto: 'Finalmente iniciaremos as gravações do nosso filme!',
+              isLast: true
+            },
+            {
+              data: '19/04/2025',
               titulo: 'Visita coletiva',
               texto: 'Vamos explorar os cenários do filme com todo o elenco! A ideia é fazer a leitura do roteiro em grupo e ajustar o que for preciso juntos, direto nos locais de gravação.',
-              isLast: true
+              isLast: false
             },
             {
               data: '07/04/2025',
@@ -213,34 +223,34 @@
         }
       }
     }).mount('#timeline-app');
-    // createApp({
-    //   data() {
-    //     return {
-    //       elenco: [
-    //         { nome: 'Thiago Castro', imagem: './assets/img/cast/thiago.webp', papel: 'Chris', insta: "thiagocastrou" },
-    //         { nome: 'Eduardo Andrade', imagem: './assets/img/cast/eduardo.webp', papel: 'Miguel', insta: "eduandradex" },
-    //         { nome: 'Ana L. Santos', imagem: './assets/img/cast/analigia.webp', papel: 'Tara', insta: "nalijaa" },
-    //         { nome: 'Marília Galerani', imagem: './assets/img/cast/marilia.webp', papel: 'Layla', insta: "mariliagalerani" },
-    //         { nome: 'Jhenice Gallina', imagem: './assets/img/cast/jhenice.webp', papel: 'Jess', insta: "jhenice_gallina" },
-    //         { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
-    //       ]
-    //     }
-    //   }
-    // }).mount('#app');
     createApp({
       data() {
         return {
           elenco: [
-            { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Chris', insta: "sombrasqueecoamfilme" },
-            { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Miguel', insta: "sombrasqueecoamfilme" },
-            { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Tara', insta: "sombrasqueecoamfilme" },
-            { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Layla', insta: "sombrasqueecoamfilme" },
-            { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Jess', insta: "sombrasqueecoamfilme" },
-            { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Renan', insta: "sombrasqueecoamfilme" },
+            { nome: "Thiago D'Araújo", imagem: 'https://media.themoviedb.org/t/p/w138_and_h175_face/A9GubMtEX5NN8RXshNv9jN110Ac.jpg', papel: 'Chris', insta: "thiago.daraujo" },
+            { nome: 'Eduardo Andrade', imagem: 'https://media.themoviedb.org/t/p/w138_and_h175_face/byJUH3XmaTciWfF2HRNJ8IXucXN.jpg', papel: 'Miguel', insta: "eduandradex" },
+            { nome: 'Ana L. Santos', imagem: 'https://media.themoviedb.org/t/p/w138_and_h175_face/kRZVaba4XJPUgtZAM71lS9dmJPa.jpg', papel: 'Tara', insta: "nalijaa" },
+            { nome: 'Marília Galerani', imagem: 'https://media.themoviedb.org/t/p/w138_and_h175_face/lAzS0HNgjzvO5u5Il47syqKsDjX.jpg', papel: 'Layla', insta: "mariliagalerani" },
+            { nome: 'Jhenice Gallina', imagem: 'https://media.themoviedb.org/t/p/w138_and_h175_face/csvwaxlTnTVoDXhRzAIqbyf4REn.jpg', papel: 'Jess', insta: "jhenice_gallina" },
+            { nome: 'Vinícius Costa', imagem: './assets/img/cast/vinicius.webp', papel: 'Renan', insta: "vini_faria_c" },
           ]
         }
       }
     }).mount('#app');
+    // createApp({
+    //   data() {
+    //     return {
+    //       elenco: [
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Chris', insta: "sombrasqueecoamfilme" },
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Miguel', insta: "sombrasqueecoamfilme" },
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Tara', insta: "sombrasqueecoamfilme" },
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Layla', insta: "sombrasqueecoamfilme" },
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_woman.png', papel: 'Jess', insta: "sombrasqueecoamfilme" },
+    //         { nome: 'Em breve', imagem: './assets/img/unknown_man.png', papel: 'Renan', insta: "sombrasqueecoamfilme" },
+    //       ]
+    //     }
+    //   }
+    // }).mount('#app');
 
     particlesJS("particles-js", {
       particles: {
@@ -277,9 +287,10 @@
       "sameAs": [
         "https://www.instagram.com/sombrasqueecoamfilme",
         "https://www.themoviedb.org/movie/1467848-sombras-que-ecoam",
-        "https://www.imdb.com/pt/title/tt36748457",
+        "https://www.imdb.com/title/tt36748457",
         "https://www.wikidata.org/wiki/Q133987612"
       ],
+
       "name": "Sombras que Ecoam",
       "genre": "Horror",
       "keywords": "terror psicológico, found footage, curta-metragem, investigação sobrenatural",
@@ -297,8 +308,8 @@
       ],
       "actor": [
         { "@type": "Person", "name": "Thiago Castro", "characterName": "Chris" },
-        { "@type": "Person", "name": "Eduardo Andrade", "characterName": "Miguel" },
-        { "@type": "Person", "name": "Ana L. Santos", "characterName": "Tara" },
+        { "@type": "Person", "name": "Eduardo William Andrade", "characterName": "Miguel" },
+        { "@type": "Person", "name": "Ana Lígia Santos", "characterName": "Tara" },
         { "@type": "Person", "name": "Marília Galerani", "characterName": "Layla" },
         { "@type": "Person", "name": "Jhenice Gallina", "characterName": "Jess" },
         { "@type": "Person", "name": "Vinícius Costa", "characterName": "Renan" }
