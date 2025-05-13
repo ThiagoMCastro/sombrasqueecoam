@@ -161,7 +161,7 @@
   }
 
   .quiz-img {
-    width: 400px;
+    width: 80%;
     border-radius: 10px;
     margin-bottom: 30px;
   }
@@ -197,17 +197,18 @@
               <span style="font-size: 1rem;">{{ resultCharacter.actor }}</span>
             </p>
             <img :src="resultCharacter.img" alt="" class="quiz-img" />
-            <h5 style="margin-top: -70px;">"{{ resultCharacter.desc }}"</h5>
-            <div class="mt-4">
-              <!-- Botão de compartilhamento -->
-              <button class="btn btn-danger me-2" @click="compartilharResultado">
-                <i class="bi-share"></i> Compartilhar
-              </button>
-
-              <!-- Botão de seguir no Instagram -->
-              <a href="https://www.instagram.com/sombrasqueecoamfilme" target="_blank" class="btn btn-danger">
-                <i class="bi-instagram"></i> Siga-nos no Instagram
-              </a>
+            <h5 style="margin-top: -60px;">"{{ resultCharacter.desc }}"</h5>
+            <div class="mt-4 row d-flex justify-content-center">
+              <div class="col-md-6 col-12 mb-4 text-center">
+                <button class="btn btn-danger me-2" @click="compartilharResultado">
+                  <i class="bi-share"></i> Compartilhar
+                </button>
+              </div>
+              <div class="col-md-6 col-12 text-center">
+                <a href="https://www.instagram.com/sombrasqueecoamfilme" target="_blank" class="btn btn-danger">
+                  <i class="bi-instagram"></i> Siga-nos no Instagram
+                </a>
+              </div>
             </div>
           </div>
         </div>
