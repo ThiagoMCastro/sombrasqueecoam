@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Language" content="pt-BR">
+  <meta name="robots" content="index, follow">
+  <title>Quiz - Sombras que Ecoam</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/img/favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-favicon.png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Um curta found footage sobre um grupo que investiga um antigo instituto assombrado. Descubra os segredos de 'Sombras que Ecoam'.">
+  <meta name="keywords"
+    content="Sombras que Ecoam, terror, found footage, filme de terror brasileiro, curta-metragem, suspense, horror, cinegrafistas, assombração, filme independente, batatais, febem, filme em produção, filme nacional, filme de terror nacional">
+  <meta name="author" content="Thiago D'Araújo">
+  <link rel="canonical" href="https://sombrasqueecoam.com.br/">
+  <link rel="alternate" hreflang="pt-BR" href="https://sombrasqueecoam.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="video.movie">
+  <meta property="og:title" content="Sombras que Ecoam">
+  <meta property="og:description"
+    content="Um curta found footage sobre um grupo que investiga um antigo instituto assombrado. Descubra os segredos de 'Sombras que Ecoam'.">
+  <meta property="og:image" content="https://sombrasqueecoam.com.br/assets/img/cover.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:url" content="https://sombrasqueecoam.com.br">
+
+  <!-- Localização -->
+  <meta property="og:locale" content="pt_BR">
+  <meta name="og:locality" content="Batatais">
+  <meta name="og:region" content="SP">
+  <meta name="og:country-name" content="BR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Vídeo: Direção e Elenco -->
+  <meta property="video:director" content="Thiago D'Araújo">
+  <meta property="video:writer" content="Eduardo William Andrade">
+  <meta property="video:writer" content="Thiago D'Araújo">
+
+  <meta property="video:actor" content="Thiago D'Araújo">
+  <meta property="video:actor:role" content="Chris">
+  <meta property="video:actor" content="Eduardo Andrade">
+  <meta property="video:actor:role" content="Miguel">
+  <meta property="video:actor" content="Ana L. Santos">
+  <meta property="video:actor:role" content="Tara">
+  <meta property="video:actor" content="Marília Galerani">
+  <meta property="video:actor:role" content="Layla">
+  <meta property="video:actor" content="Jhenice Gallina">
+  <meta property="video:actor:role" content="Jess">
+  <meta property="video:actor" content="Vinicius Costa">
+  <meta property="video:actor:role" content="Renan">
+
+  <!-- Tags de vídeo adicionais -->
+  <meta property="video:tag" content="terror psicológico">
+  <meta property="video:tag" content="found footage">
+  <meta property="video:tag" content="filme independente">
+  <meta property="video:tag" content="curta-metragem">
+  <meta property="video:tag" content="assombração">
+  <meta property="video:tag" content="investigação sobrenatural">
+
+  <!-- Estilos e Scripts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0C5RMG3E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-SK0C5RMG3E');
+  </script>
+</head>
+<style>
+  body {
+    margin: 0;
+    font-family: "Compacta", sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .quiz-container {
+    width: 60vw;
+    padding: 20px;
+    background: transparent;
+  }
+
+  .question {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .option {
+    background-color: #000000;
+    border: 1px solid #ff0000;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .option:hover {
+    background-color: #ff0000;
+    color: #000;
+    border-color: #ff0000;
+  }
+
+  .progress-bar {
+    height: 8px;
+    background: #444;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #690909);
+    width: 0;
+    transition: width 0.5s;
+  }
+
+  .final-result {
+    text-align: center;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.6s;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .quiz-img {
+    width: 400px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+</style>
+
+<body>
+  <div class="d-flex align-items-center justify-content-center flex-column">
+    <img src="../assets/img/logo.webp" width="100px" class="py-5" alt="">
+    <div id="quizApp" class="quiz-container" data-aos="fade-up">
+      <div class="progress-bar">
+        <div class="progress-bar-fill" :style="{ width: ((current + 1) / questions.length * 100) + '%' }"></div>
+      </div>
+
+      <transition name="fade" mode="out-in">
+        <div v-if="!finished" :key="current">
+          <div class="question ghost-stories text-red">{{ questions[current].text }}</div>
+          <div v-for="(option, index) in questions[current].options" :key="index" class="option"
+            @click="selectOption(option.points)">
+            {{ option.text }}
+          </div>
+        </div>
+
+        <div v-else key="finished" class="final-result">
+          <div v-if="!showResult">
+            <h2 class="ghost-stories text-red" style="font-size: 2rem;">Analisando seus resultados...</h2>
+            <p class="mt-3" style="font-size: 1.5rem;">Revelação em {{ countdown }}...</p>
+          </div>
+
+          <div v-else>
+            <h2 class="text-red ghost-stories">Você é...</h2>
+            <p class="d-none" style="font-size: 1.4rem; margin-top: 20px;">
+              {{ resultCharacter.name }}<br>
+              <span style="font-size: 1rem;">{{ resultCharacter.actor }}</span>
+            </p>
+            <img :src="resultCharacter.img" alt="" class="quiz-img" />
+            <h5 style="margin-top: -70px;">"{{ resultCharacter.desc }}"</h5>
+            <div class="mt-4">
+              <!-- Botão de compartilhamento -->
+              <button class="btn btn-danger me-2" @click="compartilharResultado">
+                <i class="bi-share"></i> Compartilhar
+              </button>
+
+              <!-- Botão de seguir no Instagram -->
+              <a href="https://www.instagram.com/sombrasqueecoamfilme" target="_blank" class="btn btn-danger">
+                <i class="bi-instagram"></i> Siga-nos no Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+
+  <!-- Efeito sonoro -->
+  <audio id="click-sound" src="../assets/click.mp3" preload="auto"></audio>
+  <audio id="suspense-sound" src="../assets/suspense.mp3" preload="auto"></audio>
+
+  <script>
+    new Vue({
+      el: '#quizApp',
+      data: {
+        current: 0,
+        score: 0,
+        finished: false,
+        showResult: false, // controle para exibir resultado após o timer
+        countdown: 6, // segundos para mostrar o resultado
+        questions: []
+      },
+      created() {
+        // Embaralhamos as perguntas e opções aqui
+        this.questions = this.shuffleQuestions([
+          {
+            text: "Você está prestes a investigar um local abandonado. Qual sua primeira ação?",
+            options: this.shuffleOptions([
+              { text: "Explorar tudo sem medo! Quero entender cada detalhe.", points: 3 },
+              { text: "Configurar a câmera e garantir que tudo seja registrado.", points: 4 },
+              { text: "Manter o grupo unido e seguir um plano.", points: 5 },
+              { text: "Ficar atento(a), mas sem acreditar que algo realmente vá acontecer.", points: 2 },
+              { text: "Pesquisar sobre o lugar antes de seguir em frente.", points: 6 }
+            ])
+          },
+          {
+            text: "Durante a investigação, você encontra um objeto antigo misterioso. O que faz?",
+            options: this.shuffleOptions([
+              { text: "Toco no objeto para ver se algo acontece.", points: 3 },
+              { text: "Gravo um vídeo registrando todos os detalhes.", points: 4 },
+              { text: "Tento entender se ele é relevante para nossa pesquisa.", points: 5 },
+              { text: "Digo que provavelmente é apenas um item velho sem importância.", points: 2 },
+              { text: "Procuro informações sobre ele para descobrir sua história.", points: 6 }
+            ])
+          },
+          {
+            text: "Algo estranho acontece e o grupo começa a entrar em pânico. Você…",
+            options: this.shuffleOptions([
+              { text: "Insisto em continuar investigando, independente do risco.", points: 3 },
+              { text: "Foco em gravar tudo, pois pode ser crucial mais tarde.", points: 4 },
+              { text: "Tento organizar a equipe e garantir que todos estejam seguros.", points: 5 },
+              { text: "Faço uma piada para quebrar a tensão, mas sigo alerta.", points: 2 },
+              { text: "Analiso todas as pistas para entender o que está acontecendo.", points: 6 }
+            ])
+          },
+          {
+            text: "Você ouve um som inexplicável de sino tocando. Qual sua reação?",
+            options: this.shuffleOptions([
+              { text: "Corro na direção do som para descobrir sua origem.", points: 3 },
+              { text: "Ajusto a câmera e tento capturar tudo.", points: 4 },
+              { text: "Reúno o grupo para garantir que ninguém se disperse.", points: 5 },
+              { text: "Convenço todos de que foi apenas o vento e sigo em frente.", points: 2 },
+              { text: "Tento entender se há alguma lenda sobre sinos ligados ao local.", points: 6 }
+            ])
+          },
+          {
+            text: "Se algo bizarro acontecesse agora, sua primeira reação seria…",
+            options: this.shuffleOptions([
+              { text: "Ficar empolgado(a), afinal, agora ficou interessante!", points: 3 },
+              { text: "Focar em registrar tudo sem interferir.", points: 4 },
+              { text: "Manter a calma, organizar o grupo e decidir o próximo passo.", points: 5 },
+              { text: "Tentar racionalizar e encontrar uma explicação lógica.", points: 2 },
+              { text: "Analisar todos os detalhes para encontrar respostas concretas.", points: 6 }
+            ])
+          },
+          {
+            text: "Qual sua abordagem para lidar com o desconhecido?",
+            options: this.shuffleOptions([
+              { text: "Encaro sem medo, adoro um desafio!", points: 3 },
+              { text: "Fico atento(a), mas prefiro documentar a experiência.", points: 4 },
+              { text: "Penso estrategicamente para não correr riscos.", points: 5 },
+              { text: "Mantenho o ceticismo até que veja provas concretas.", points: 2 },
+              { text: "Estudo profundamente antes de formar uma conclusão.", points: 6 }
+            ])
+          },
+          {
+            text: "Qual equipamento você nunca deixaria para trás durante a investigação?",
+            options: this.shuffleOptions([
+              { text: "Lanterna e mapa para explorar melhor o local.", points: 3 },
+              { text: "Câmera e microfone para gravar tudo.", points: 4 },
+              { text: "Um plano bem estruturado para evitar imprevistos.", points: 5 },
+              { text: "Meu bom senso para não cair em armadilhas óbvias.", points: 2 },
+              { text: "Caderno e arquivos de pesquisa para decifrar os acontecimentos.", points: 6 }
+            ])
+          },
+          {
+            text: "Você vê algo se movendo na escuridão. Como reage?",
+            options: this.shuffleOptions([
+              { text: "Me aproximo para investigar melhor.", points: 3 },
+              { text: "Tento captar imagens sem interferir.", points: 4 },
+              { text: "Peço para o grupo se manter unido e agir com cautela.", points: 5 },
+              { text: "Convenço a todos de que provavelmente foi só um animal ou sombra.", points: 2 },
+              { text: "Tento lembrar se há alguma lenda ou relato sobre isso.", points: 6 }
+            ])
+          },
+          {
+            text: "Se pudesse escolher, qual papel teria dentro de uma equipe investigativa?",
+            options: this.shuffleOptions([
+              { text: "O explorador destemido, sempre pronto para desafios.", points: 3 },
+              { text: "O documentarista, responsável por registrar tudo.", points: 4 },
+              { text: "O líder estratégico, garantindo que tudo ocorra bem.", points: 5 },
+              { text: "O cético, apontando incoerências e analisando racionalmente.", points: 2 },
+              { text: "O pesquisador, buscando entender profundamente os fenômenos.", points: 6 }
+            ])
+          },
+          {
+            text: "Como você quer ser lembrado(a) após essa experiência?",
+            options: this.shuffleOptions([
+              { text: "Como a pessoa que descobriu algo incrível!", points: 3 },
+              { text: "Como quem registrou tudo para que ninguém esqueça.", points: 4 },
+              { text: "Como o líder que manteve tudo organizado.", points: 5 },
+              { text: "Como quem manteve o bom humor mesmo nos piores momentos.", points: 2 },
+              { text: "Como quem revelou segredos ocultos e trouxe à tona verdades esquecidas.", points: 6 }
+            ])
+          }
+        ]);
+      },
+      methods: {
+        compartilharResultado() {
+          const texto = `Fiz o quiz do filme Sombras que Ecoam e tirei o personagem ${this.resultCharacter.name}! Faz o seu e descobre também: https://sombrasqueecoam.com.br/quiz`;
+
+          if (navigator.share) {
+            navigator.share({
+              title: 'Quiz Sombras que Ecoam',
+              text: texto,
+              url: 'https://sombrasqueecoam.com.br/quiz'
+            }).catch(console.error);
+          } else {
+            // Fallback para copiar o texto
+            navigator.clipboard.writeText(texto)
+              .then(() => alert('Mensagem copiada! Agora é só colar onde quiser.'))
+              .catch(() => alert('Não foi possível copiar a mensagem automaticamente.'));
+          }
+        },
+        shuffleQuestions(questions) {
+          return questions.sort(() => Math.random() - 0.5);
+        },
+        shuffleOptions(options) {
+          return options.sort(() => Math.random() - 0.5);
+        },
+        selectOption(points) {
+          document.getElementById('click-sound').currentTime = 0;
+          document.getElementById('click-sound').play();
+
+          this.score += points;
+
+          if (this.current < this.questions.length - 1) {
+            this.current++;
+          } else {
+            this.playSuspenseSoundAndStartCountdown();
+          }
+        },
+        playSuspenseSoundAndStartCountdown() {
+          const suspenseSound = document.getElementById('suspense-sound');
+          suspenseSound.currentTime = 0;
+          suspenseSound.volume = 0.5; // Ajuste o volume conforme necessário
+          suspenseSound.play();
+
+          this.finished = true; // Mostra tela de suspense
+
+          const countdownInterval = setInterval(() => {
+            if (this.countdown > 1) {
+              this.countdown--;
+            } else {
+              clearInterval(countdownInterval);
+              this.showResult = true;
+            }
+          }, 1000);
+        }
+      },
+      computed: {
+        resultCharacter() {
+          if (this.score >= 20 && this.score < 25) {
+            return {
+              name: "Jéssica Alves",
+              actor: "Jhenice Gallina",
+              img: "../assets/img/personagens/card_jess.png",
+              desc: "A mente cética e bem-humorada que enxerga além do terror."
+            };
+          } else if (this.score >= 25 && this.score < 35) {
+            return {
+              name: "Tara Lellis",
+              actor: "Ana Lígia Santos",
+              img: "../assets/img/personagens/card_tara.png",
+              desc: "A aventureira destemida, sempre pronta para se jogar no mistério."
+            };
+          } else if (this.score >= 35 && this.score < 45) {
+            return {
+              name: "Miguel Toller",
+              actor: "Eduardo Andrade",
+              img: "../assets/img/personagens/card_miguel.png",
+              desc: "O documentarista que quer capturar cada detalhe."
+            };
+          } else if (this.score >= 45 && this.score < 55) {
+            return {
+              name: "Chris Costa",
+              actor: "Thiago D'Araújo",
+              img: "../assets/img/personagens/card_chris.png",
+              desc: "O líder nato que busca manter tudo sob controle."
+            };
+          } else if (this.score >= 55) {
+            return {
+              name: "Layla Silveira",
+              actor: "Marília Galerani",
+              img: "../assets/img/personagens/card_layla.png",
+              desc: "A pesquisadora dedicada que desvenda os mistérios ocultos."
+            };
+          }
+        }
+      }
+    });
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Movie",
+      "sameAs": [
+        "https://www.instagram.com/sombrasqueecoamfilme",
+        "https://www.themoviedb.org/movie/1467848-sombras-que-ecoam",
+        "https://www.imdb.com/title/tt36748457",
+        "https://www.wikidata.org/wiki/Q133987612"
+      ],
+
+      "name": "Sombras que Ecoam",
+      "genre": "Horror",
+      "keywords": "terror psicológico, found footage, curta-metragem, investigação sobrenatural",
+      "director": {
+        "@type": "Person",
+        "name": "Thiago D'Araújo"
+      },
+      "productionCompany": {
+        "@type": "Organization",
+        "name": "Evil Lodge Productions"
+      },
+      "writer": [
+        { "@type": "Person", "name": "Eduardo Andrade" },
+        { "@type": "Person", "name": "Thiago D'Araújo" }
+      ],
+      "actor": [
+        { "@type": "Person", "name": "Thiago D'Araújo", "characterName": "Chris" },
+        { "@type": "Person", "name": "Eduardo William Andrade", "characterName": "Miguel" },
+        { "@type": "Person", "name": "Ana Lígia Santos", "characterName": "Tara" },
+        { "@type": "Person", "name": "Marília Galerani", "characterName": "Layla" },
+        { "@type": "Person", "name": "Jhenice Gallina", "characterName": "Jess" },
+        { "@type": "Person", "name": "Vinícius Costa", "characterName": "Renan" }
+      ],
+      "description": "Vinte anos após o fechamento de um instituto de menores envolto em denúncias de abuso, um grupo de cinegrafistas independentes decide investigar o passado sombrio do local em um documentário intitulado Sombras que Ecoam. Mas à medida que se aprofundam nas filmagens, eventos inexplicáveis começam a acontecer. Algo ali permaneceu. As câmeras não param de gravar — até o fim.",
+      "image": "https://sombrasqueecoam.com.br/cover.webp",
+      "url": "https://sombrasqueecoam.com.br"
+    }
+  </script>
+</body>
+
+</html>
