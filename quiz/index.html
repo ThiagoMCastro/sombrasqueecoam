@@ -94,10 +94,20 @@
   }
 
   .quiz-container {
-    width: 60vw;
+    width: 90vw;
+    max-width: 700px;
     padding: 20px;
+    margin: 0 auto;
     background: transparent;
   }
+
+  /* Para telas maiores (desktop) */
+  @media (min-width: 992px) {
+    .quiz-container {
+      width: 60vw;
+    }
+  }
+
 
   .question {
     font-size: 1.4rem;
